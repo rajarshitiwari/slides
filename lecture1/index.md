@@ -3,6 +3,8 @@ layout: slide
 title: Lecture 1 - Quantum Basics
 talkfile: /lecture1/talk.md
 ---
+
+<!-- .slide: data-background="linear-gradient(to bottom, #283b95, #17b2c3)" -->
 # My First Lecture
 
 Rajarshi Tiwari
@@ -11,7 +13,7 @@ Rajarshi Tiwari
 |-|-|
 |c|d|
 
----
+--
 
 ## Slide 1: Linear Algebra
 - Vector independence
@@ -37,16 +39,27 @@ $\alpha x^2 + \beta y^2 = \gamma z^2$
 
 ---
 
+<!-- .two-column -->
 ## Slide 4: Code Highlighting
 
-```python
+```python [1-2|3|4-5]
+
 def f(x):
     return x**2 + 1
 
+y = f(3)
+```
 
 ---
-👉 Each `---` = new slide.  
-👉 Each `--` = vertical sub-slide under same topic.  
-👉 Inline LaTeX with `$...$` and block math with `$$...$$`.
+
+- 👉 Each `---` = new slide.
+
+- 👉 Each `--` = vertical sub-slide under same topic.
+  - Think of it as **2D** navigation through slides.
+
+- 👉 Inline LaTeX with `$...$` and block math with `$$...$$`.
 
 ---
+
+
+# Thank you!
