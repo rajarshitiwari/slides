@@ -17,8 +17,8 @@ title: Slides Home
     justify-content: center; /* center cards if fewer than full row */
   }
   .lecture-card {
-    background: #fff;
-    border: 3px solid #ddd;
+    background: #b9fdce;
+    border: 3px solid #33b14e;
     border-radius: 12px;
     padding: 30px;
     text-align: center;
@@ -27,23 +27,33 @@ title: Slides Home
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   }
   .lecture-card:hover {
-    border-color: #0b74ff;
+    border-color: #ee2128;
     box-shadow: 0 12px 12px rgba(0,0,0,0.3);
-    transform: translateY(-3px);
+    transform: translateY(-6px);
   }
+  .lecture-card:click{
+    transform: rotateZ(360deg);
+  }
+
   .lecture-card a {
     display: block;
     font-weight: 600;
     font-size: 1.2em;
-    color: #0b74ff;
+    color: #db0d11;
     text-decoration: none;
   }
 </style>
 
 <div class="lecture-wrapper">
-  <h1>📑 Lecture Slides</h1>
+  <br>
+  <h1>📑 Slides for lectures </h1>
+  <br>
+  <h3>
+    Following is the list of lectures/topics. 
+  </h3>
+  <br>
   <h2>Select a lecture:</h2>
-
+  <br><br>
   <div class="lecture-grid">
     {% assign lectures = site.pages | where: "layout", "slide" | sort: "url" %}
       {% for lec in lectures %}

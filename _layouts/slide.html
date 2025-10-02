@@ -13,12 +13,16 @@ layout: nil
   <link rel="stylesheet" href="{{ '/assets/reveal/dist/theme/black.css' | relative_url }}" id="theme">
 
   <!-- Optional custom styling -->
-  <link rel="stylesheet" href="{{ '/assets/custom.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
-      <section data-markdown data-separator="^---$" data-separator-vertical="^--$" data-separator-notes="^Note:">
+      <!-- Use Reveal's markdown loader -->
+      <section data-markdown
+               data-separator="^---$"
+               data-separator-vertical="^--$"
+               data-separator-notes="^Note:">
         <textarea data-template>
 {{ page.content }}
         </textarea>
@@ -26,7 +30,7 @@ layout: nil
     </div>
   </div>
 
-  <!-- Reveal.js core JS -->
+  <!-- Reveal.js core -->
   <script src="{{ '/assets/reveal/dist/reveal.js' | relative_url }}"></script>
 
   <!-- Plugins -->
@@ -35,10 +39,34 @@ layout: nil
   <script src="{{ '/assets/reveal/plugin/math/math.js' | relative_url }}"></script>
   <script src="{{ '/assets/reveal/plugin/notes/notes.js' | relative_url }}"></script>
 
+  <!-- Audio slideshow plugin -->
+  <script src="{{ '/assets/reveal/plugin/audio-slideshow/plugin.js' | relative_url }}"></script>
+  <script src="{{ '/assets/reveal/plugin/audio-slideshow/recorder.js' | relative_url }}"></script>
+
   <script>
     Reveal.initialize({
       hash: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealNotes ]
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealMath,
+        RevealNotes,
+        RevealAudioSlideshow
+      ],
+      audio: {
+        prefix: '{{ page.url }}audio/', // lecture-local audio folder
+        suffix: '.mp3',
+        autoplay: false,         // don't try to autoplay
+        defaultDuration: 0,
+        advance: false,          // don't auto-advance
+        playerOpacity: 0.8,      // startAtFragment: true
+
+        recorder: {
+          enabled: true,
+          autoplay: false,
+          loop: false,
+        }
+      }
     });
   </script>
 </body>
