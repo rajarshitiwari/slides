@@ -45,14 +45,15 @@ title: Slides Home
   <h2>Select a lecture:</h2>
 
   <div class="lecture-grid">
-    {% for lec in site.pages %}
-      {% if lec.layout == "slide" %}
-        <div class="lecture-card">
-          <a href="{{ lec.url | relative_url }}">{{ lec.title | escape }}</a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+    {% assign lectures = site.pages | where: "layout", "slide" | sort: "url" %}
+      {% for lec in lectures %}
+        {% if lec.layout == "slide" %}
+          <div class="lecture-card">
+            <a href="{{ lec.url | relative_url }}">{{ lec.title | escape }}</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
 </div>
 
 
