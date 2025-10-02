@@ -1,0 +1,58 @@
+---
+layout: default
+title: Slides Home
+---
+
+<style>
+  .lecture-wrapper {
+    max-width: 1200px;   /* limits full page width */
+    margin: 0 auto;      /* centers horizontally */
+    padding: 0 20px;     /* breathing space */
+  }
+  .lecture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 24px;
+    justify-content: center; /* center cards if fewer than full row */
+  }
+  .lecture-card {
+    background: #fff;
+    border: 3px solid #ddd;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.3rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .lecture-card:hover {
+    border-color: #0b74ff;
+    box-shadow: 0 12px 12px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+  }
+  .lecture-card a {
+    display: block;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #0b74ff;
+    text-decoration: none;
+  }
+</style>
+
+<div class="lecture-wrapper">
+  <h1>📑 Lecture Slides</h1>
+  <h2>Select a lecture:</h2>
+
+  <div class="lecture-grid">
+    {% for lec in site.pages %}
+      {% if lec.layout == "slide" %}
+        <div class="lecture-card">
+          <a href="{{ lec.url | relative_url }}">{{ lec.title | escape }}</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+

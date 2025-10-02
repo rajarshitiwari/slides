@@ -1,0 +1,43 @@
+title: "Lecture Slides"
+baseurl: "" # if deploying to subdir, put it here, e.g. "/myslides"
+url: ""     # set your site URL if publishing
+
+# Markdown + kramdown with MathJax
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Include lecture folders
+include:
+  - lecture1
+  - lecture2
+  - lecture3
+  # add more if needed, or glob with "lecture*"
+
+exclude:
+  - README.md
+  - node_modules
+  - minimal
+
+
+# Collections (optional, but neat)
+collections:
+  lectures:
+    output: true
+    permalink: /:path/
+
+# Plugins (if you want extras, safe for GitHub Pages)
+#plugins:
+#  - jekyll-feed
+#  - jekyll-seo-tag
+
+# Defaults so all lectures use slide layout
+defaults:
+  - scope:
+      path: "lecture*"
+      type: "pages"
+    values:
+      layout: slide

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Slides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <!-- Reveal.js theme (choose: black, white, league, night, serif, simple, sky, solarized, etc.) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme">
+
+  <!-- Custom tweaks -->
+  <link rel="stylesheet" href="assets/custom.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Load Markdown file -->
+      <section data-markdown="talk.md"
+               data-separator="^---$"
+               data-separator-vertical="^--$"
+               data-separator-notes="^Note:"></section>
+    </div>
+  </div>
+
+  <!-- Reveal.js -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.MathJax2 ],
+      mathjax2: {
+        config: 'TeX-AMS_HTML-full',
+        TeX: { Macros: { RR: "{\\mathbb R}" } }
+      }
+    });
+  </script>
+</body>
+</html>

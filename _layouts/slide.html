@@ -1,0 +1,45 @@
+---
+layout: nil
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ page.title }}</title>
+
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="{{ '/assets/reveal/dist/reveal.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/reveal/dist/theme/black.css' | relative_url }}" id="theme">
+
+  <!-- Optional custom styling -->
+  <link rel="stylesheet" href="{{ '/assets/custom.css' | relative_url }}">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown data-separator="^---$" data-separator-vertical="^--$" data-separator-notes="^Note:">
+        <textarea data-template>
+{{ page.content }}
+        </textarea>
+      </section>
+    </div>
+  </div>
+
+  <!-- Reveal.js core JS -->
+  <script src="{{ '/assets/reveal/dist/reveal.js' | relative_url }}"></script>
+
+  <!-- Plugins -->
+  <script src="{{ '/assets/reveal/plugin/markdown/markdown.js' | relative_url }}"></script>
+  <script src="{{ '/assets/reveal/plugin/highlight/highlight.js' | relative_url }}"></script>
+  <script src="{{ '/assets/reveal/plugin/math/math.js' | relative_url }}"></script>
+  <script src="{{ '/assets/reveal/plugin/notes/notes.js' | relative_url }}"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath, RevealNotes ]
+    });
+  </script>
+</body>
+</html>
