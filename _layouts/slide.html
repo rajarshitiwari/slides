@@ -43,6 +43,9 @@ layout: nil
   <script src="{{ 'assets/reveal/plugin/audio-slideshow/plugin.js' | relative_url }}"></script>
   <script src="{{ 'assets/reveal/plugin/audio-slideshow/recorder.js' | relative_url }}"></script>
 
+  <!-- Mermaid plugin <script src="{{ 'assets/reveal/plugin/mermaid/mermaid.js' | relative_url }}"></script> -->
+
+   
   <script>
     Reveal.initialize({
       hash: true,
@@ -68,7 +71,9 @@ layout: nil
           autoplay: false,
           loop: false,
         }
-      }
+      },
+      transition: "zoom",
+      navigationMode: "default"
     });
   </script>
 </body>

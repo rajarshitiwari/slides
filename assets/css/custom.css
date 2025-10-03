@@ -5,3 +5,25 @@
 .reveal pre code {
   font-size: 1rem;
 }
+/* assets/custom.css */
+
+/* Container for columns */
+.cols {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 1em;
+}
+
+/* Each column */
+.col {
+  flex: 1;
+  padding: 0.5em;
+  border: 1px solid rgba(0,0,0,0.1);
+  min-width: 0; /* prevents overflow issues */
+}
+
+/* Optional: vertical separator between cols */
+.col + .col {
+  padding-left: 1em;
+}
