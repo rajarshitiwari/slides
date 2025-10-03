@@ -51,7 +51,8 @@ layout: nil
         RevealHighlight,
         RevealMath,
         RevealNotes,
-        RevealAudioSlideshow
+        RevealAudioSlideshow,
+        RevealAudioRecorder
       ],
       audio: {
         prefix: '{{ page.url }}audio/', // lecture-local audio folder
@@ -60,6 +61,7 @@ layout: nil
         defaultDuration: 0,
         advance: false,          // don't auto-advance
         playerOpacity: 0.8,      // startAtFragment: true
+        playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;',
 
         recorder: {
           enabled: true,

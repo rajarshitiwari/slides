@@ -4,16 +4,14 @@ title: Lecture 1 - Quantum Basics
 talkfile: /lecture1/talk.md
 ---
 
-<!-- .slide: data-background="linear-gradient(to bottom, #283b95, #17b2c3)" -->
-# My First Lecture
+<!-- .slide: data-background="linear-gradient(to bottom, #67c4f7ff, #ffffffff)" -->
+# Stern - Gerlach experiment
 
 Rajarshi Tiwari
 
-|a|b|
-|-|-|
-|c|d|
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Stern-Gerlach_experiment.svg" data-preview-image width="50%">
 
---
+---
 
 ## Slide 1: Linear Algebra
 - Vector independence
